@@ -67,7 +67,16 @@ ul > li > p{
 }
 form{
     margin-top: 40px;
+   position: relative;
 }
+.error-alert{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 0.7rem;
+    color: #c92432;
+    font-weight: 800;}
+
 
 form > label{
  
@@ -76,7 +85,8 @@ form > label{
    color:hsl(235, 18%, 26%) ;
 }
 
-form > #email{
+form> .input_container > .input{
+    
     box-sizing: border-box;
     padding: 0 16px;
     border: 1px solid hsl(231, 7%, 60%);

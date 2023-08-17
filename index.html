@@ -36,8 +36,18 @@
         </ul>
 
         <form>
-          <label for="email">Email address</label><br />
-          <input id="email" type="text" placeholder="example@gmail.com" />
+          <label for="email" id="email">Email address</label><br />
+          <span class="error-alert" id="error-alert"></span>
+
+          <div class="input_container" id="input_container">
+            <input
+              class="input"
+              id="input"
+              type="email"
+              placeholder="example@gmail.com"
+              onkeyup="validateEmail()"
+            />
+          </div>
           <input
             type="submit"
             id="sub_btn"
@@ -49,5 +59,28 @@
         <img src="assets/images/illustration-sign-up-desktop.svg" />
       </section>
     </div>
+    <script>
+      // var emailField = document.getElementById("input");
+      var emailField = document.getElementById("input");
+      var emailLabel = document.getElementById("email");
+      var errMSG = document.getElementById("error-alert");
+
+      function validateEmail() {
+        if (
+          !emailField.value.match(
+            /^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/
+          )
+        ) {
+          errMSG.innerHTML = "Valid email required";
+          emailField.style.border = "2px solid #c92432";
+          emailField.style.backgroundColor = "2px solid red";
+          return false;
+        }
+
+        errMSG.innerHTML = "";
+        emailField.style.border = "1px solid green";
+        return true;
+      }
+    </script>
   </body>
 </html>
