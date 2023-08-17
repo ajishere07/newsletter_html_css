@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family:  'Roboto', sans-serif;
@@ -42,6 +43,10 @@ font-size: 1rem;
   color: hsl(234, 29%, 20%) ;
   font-weight:500;
   margin-bottom: 30px;
+}
+.img_sec > img{
+   
+    object-fit: cover;
 }
 
 ul{
@@ -95,3 +100,32 @@ form > #email{
     height: 47px;
     margin-top: 26px;
 }
+
+
+#sub_btn:hover{
+    cursor: pointer;
+    background-image: linear-gradient(to right,#FD517A ,#FF6A3A );
+    box-shadow:#FF6A3A 0px 5px 15px 0px;
+    
+}
+
+@media only screen and (max-width:600px){
+ 
+    .main_container{
+     width: 100%;
+        flex-direction: column-reverse;
+        padding: 0;
+        border-radius: 0;
+    }
+    .form_sec{
+        margin: 0;
+    }
+    .img_sec> img{
+        width: 100%;
+        object-fit: contain;
+    }
+     .form_sec{
+        margin: 60px 40px;
+     }
+}
+
