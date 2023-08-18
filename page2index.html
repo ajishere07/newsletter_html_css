@@ -15,10 +15,18 @@
       </h1>
       <p>
         A confirmation email has been sent to<br />
-        <b>asdfasfsdfsaffsf</b>. Please open it and click <br />the button
-        insider to confirm your subscription.
+        <b> <span id="email">asdfasfsdfsaffsf</span></b
+        >. Please open it and click <br />the button insider to confirm your
+        subscription.
       </p>
       <button>Dismiss message</button>
     </div>
+    <script>
+      var email_id = localStorage.getItem("email_id");
+      var email = document.getElementById("email");
+      email.innerHTML = email_id;
+
+      console.log(email_id);
+    </script>
   </body>
 </html>

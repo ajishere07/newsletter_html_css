@@ -35,7 +35,7 @@
           </li>
         </ul>
 
-        <form>
+        <form id="email_form_container" action="page2index.html" method="get">
           <label for="email" id="email">Email address</label><br />
           <span class="error-alert" id="error-alert"></span>
 
@@ -51,6 +51,7 @@
           <input
             type="submit"
             id="sub_btn"
+            onclick="sub_form()"
             value="Subscribe to monthly newsletter"
           />
         </form>
@@ -60,7 +61,6 @@
       </section>
     </div>
     <script>
-      // var emailField = document.getElementById("input");
       var emailField = document.getElementById("input");
       var emailLabel = document.getElementById("email");
       var errMSG = document.getElementById("error-alert");
@@ -79,7 +79,22 @@
 
         errMSG.innerHTML = "";
         emailField.style.border = "1px solid green";
+
+        //deleting the white space around
+
         return true;
+      }
+
+      let email_form_container = document.getElementsById(
+        "email_form_container"
+      );
+
+      function sub_form() {
+        const email_id = emailField.value.trim();
+
+        localStorage.setItem("email_id", email_id);
+        console.log(email_id);
+        return false;
       }
     </script>
   </body>
